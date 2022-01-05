@@ -1,0 +1,6 @@
+user:
+    name: eric
+    uid: 1001
+    group: eric
+    shell: /usr/bin/zsh
+    email:  eric@pdxhub.org
