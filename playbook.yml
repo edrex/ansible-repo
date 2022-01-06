@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+      - { role: base, tags: ['base']}
+      # - {role: wireguard, tags: ['wireguard']}
+- hosts: homeservers
+  become: yes
+  roles:
+    - { role: update-system, tags: ['update']}
