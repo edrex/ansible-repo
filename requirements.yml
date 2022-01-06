@@ -1,1 +1,3 @@
 - name: jmcvetta.passwordless-sudo
+- name: igor_nikiforov.docker
+- name: robertdebock.python_pip 

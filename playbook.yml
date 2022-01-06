@@ -7,4 +7,12 @@
 - hosts: homeservers
   become: yes
   roles:
+    - { role: common, tags: ['always']}
+    - { role: odroidhc1, tags: ['hardware']}
     - { role: update-system, tags: ['update']}
+    - { role: syncthing, tags: ['syncthing'], channel: stable }
+    - role: robertdebock.python_pip
+      tags: ['base']
+    - role: igor_nikiforov.docker
+      tags: ['docker']
+      docker_compose_install: true

@@ -1,0 +1,16 @@
+- name: Install kernel
+# TODO: uninstall other versions?
+  apt:
+    name:
+      - linux-dtb-edge-odroidxu4
+      - linux-image-edge-odroidxu4
+    state: latest
+# used here: https://github.com/armbian/build/blob/895e5c95d5d04785f8a3f337329f5e8a64755826/config/bootscripts/boot-odroid-xu4.ini#L266
+- name: Set board type to hc1 for DTB loading in Armbian boot script
+  ansible.builtin.lineinfile:
+    path: /boot/armbianEnv.txt
+    regexp: '^board_name='
+    line: board_name=hc1
+    notify: Reboot
+
+
